@@ -35,7 +35,7 @@ export class ProductInfrastructure
     const searchTerm = (where as any).search;
     if (searchTerm && searchTerm.trim() !== "") {
       queryBuilder.andWhere(
-        "(product.name LIKE :search OR product.code LIKE :search OR category.name LIKE :search OR brand.name LIKE :search)",
+        "(LOWER(product.name) LIKE LOWER(:search) OR LOWER(product.code) LIKE LOWER(:search) OR LOWER(category.name) LIKE LOWER(:search) OR LOWER(brand.name) LIKE LOWER(:search))",
         { search: `%${searchTerm}%` }
       );
     }

@@ -43,7 +43,7 @@ export class UserInfrastructure
     const searchTerm = (where as any).search;
     if (searchTerm && searchTerm.trim() !== "") {
       queryBuilder.andWhere(
-        "(user.name LIKE :search OR user.email LIKE :search OR role.name LIKE :search)",
+        "(LOWER(user.name) LIKE LOWER(:search) OR LOWER(user.email) LIKE LOWER(:search) OR LOWER(role.name) LIKE LOWER(:search))",
         { search: `%${searchTerm}%` }
       );
     }
