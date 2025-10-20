@@ -65,13 +65,13 @@ export const productSchemas = {
         "number.base": "Sale price must be a number",
         "number.positive": "Sale price must be greater than 0",
       }),
-      categoryId: joi.number().integer().positive().required().messages({
+      category: joi.number().integer().positive().required().messages({
         "number.base": "Category ID must be a number",
         "number.integer": "Category ID must be an integer",
         "number.positive": "Category ID must be positive",
         "any.required": "Category ID is required",
       }),
-      brandId: joi.number().integer().positive().required().messages({
+      brand: joi.number().integer().positive().required().messages({
         "number.base": "Brand ID must be a number",
         "number.integer": "Brand ID must be an integer",
         "number.positive": "Brand ID must be positive",
