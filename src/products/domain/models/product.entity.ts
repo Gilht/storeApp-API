@@ -59,4 +59,7 @@ export class ProductEntity {
 
   @Column({ type: "boolean", default: true })
   active: boolean;
+
+    @Column({ type: 'varchar', length: 500, nullable: true })
+    imgUrl: string;
 }

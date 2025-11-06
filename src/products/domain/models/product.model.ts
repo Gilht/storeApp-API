@@ -14,6 +14,7 @@ export class ProductModel {
     public createdAt: Date,
     public updatedAt: Date | null,
     public deletedAt: Date | null,
-    public active: boolean
+    public active: boolean,
+    public imgUrl: string | null,
   ) {}
 }

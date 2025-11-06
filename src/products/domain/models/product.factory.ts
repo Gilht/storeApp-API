@@ -13,6 +13,7 @@ export interface IProduct {
   updatedAt: Date;
   deletedAt: Date;
   active: boolean;
+  imgUrl: string | null;
 }
 
 export class ProductFactory {
@@ -29,7 +30,7 @@ export class ProductFactory {
     const updatedAt = new Date();
     const deletedAt = new Date();
     const active = product.active !== undefined ? product.active : true;
-
+    const imgUrl = product.imgUrl;
     if (!name || name.trim() === "" || name.trim().length < 3) {
       throw new Error("Invalid name: must be at least 3 characters");
     }
@@ -62,7 +63,8 @@ export class ProductFactory {
       createdAt,
       updatedAt,
       deletedAt,
-      active
+      active,
+        imgUrl,
     );
   }
 }
